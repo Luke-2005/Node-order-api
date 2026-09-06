@@ -23,7 +23,7 @@ Die Api kann in VS Code mit über die Mitgelieferte Datei `requests.http` (mithi
 
 
 ## Migration zu einer Datenbank:
-1. Gleichzeitiger und schnellerer Zugriff auf die Datenbank.
-2. Bessere Tabellenstruktur mit mehreren Tabellen und Normalformen für eine weiger fehleranfällige verwaltung.
-3. Vorgeschrieben Typen und Pflichtfeldern auf Datenbankebene.
-4. Nutzen eines ORMs um kein manuelles SQL zu sschreiben.
+1. **Entkopplung:** Die Dateizugriffe aus der Server-Logik in ein `orderRepository.js` auslagern.
+2. **Datenbank & ORM:** Eine relationale Datenbank einrichten und ein ORM einbinden, um Abfragen in JavaScript statt rohem SQL zu schreiben.
+3. **Datenbank-Design:** Erstellen der Tabellen (z.B `orders` und `order_items`) mit passenden Datentypen und Fremdschlüsseln.
+4. **Umstellung & Migration:** Umstellen der Anfragen auf `async/await` (für gleichzeitige Zugriffe), sowie eines Migrations-Skripts für die bestehenden Daten aus der `orders.json`.
