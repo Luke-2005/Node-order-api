@@ -118,13 +118,10 @@ const server = http.createServer(async (req, res) => {
         if (orderIndex === -1) {
             return sendJson(res, 404, { error: `Bestellung mit ID '${id}' wurde nicht gefunden.` });
         }
-
-        const originalId = orders[orderIndex].id;
-
+        
         const updatedOrder = {
             ...orders[orderIndex],
-            ...body,
-            id: originalId, // Ensure the ID remains unchanged
+            status: body.status || orders[orderIndex].status
         };
 
         orders[orderIndex] = updatedOrder;

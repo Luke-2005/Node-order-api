@@ -24,6 +24,7 @@ PUT http://localhost:8080/orders/1
 Content-Type: application/json
 
 {
+  "customerName": "Luke",
   "status": "shipped"
 }
 
